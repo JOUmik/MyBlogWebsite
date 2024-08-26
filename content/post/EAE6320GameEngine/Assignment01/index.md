@@ -4,7 +4,7 @@ title = "Game Engine II Assignment01"
 date = "2024-08-26"
 description = "The details of assignment 01 for eae6320."
 tags = [
-    "eae6320"
+    "EAE6320"
 ]
 categories = [
     "game engine"

@@ -18,23 +18,16 @@ timeout: 5m
 languages:
     en:
         languageName: English
-        title: Example Site
+        title: Joumik
         weight: 1
         params:
             description: Example description
     zh-cn:
         languageName: 中文
-        title: 演示站点
+        title: 青若曦冰
         weight: 2
         params:
             description: 演示说明
-    ar:
-        languageName: عربي
-        languagedirection: rtl
-        title: موقع تجريبي
-        weight: 3
-        params:
-            description: وصف تجريبي
 
 services:
     # Change it to your Disqus shortname before using
@@ -65,7 +58,7 @@ params:
 
     sidebar:
         emoji: 🍥
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        subtitle: To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel.
         avatar:
             enabled: true
             local: true
