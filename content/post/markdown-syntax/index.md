@@ -1,168 +1,128 @@
 +++
-author = "Hugo Authors"
-title = "Markdown Syntax Guide"
-date = "2019-03-11"
+author = "Yan Liu"
+title = "Game Engine II Assignment01"
+date = "2024-08-26"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
-    "markdown",
-    "css",
-    "html",
-    "themes",
+    "eae6320"
 ]
 categories = [
-    "themes",
-    "syntax",
+    "game engine"
 ]
 series = ["Themes Guide"]
 aliases = ["migrate-from-jekyl"]
-image = "pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
+image = "engine.jpg"
+
 +++
 
-This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
 <!--more-->
 
-## Headings
+## Gif of My Game
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+<img src=".\animatedcolor.gif" alt="animatedcolor" style="zoom:67%;" />
 
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
 
-## Paragraph
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+## Log of My Game
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+![log](.\log.png)
 
-## Blockquotes
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
 
-#### Blockquote without attribution
+## Add Reference
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use *Markdown syntax* within a blockquote.
+The projects need to add reference to graphics is **Application** and **ShaderBuilder**.
 
-#### Blockquote with attribution
 
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
 
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+## Optional Challenges
 
-## Tables
+### Slow time
 
-Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
+Add responses to keyboard events in cMyGame.cpp, I use **space** to slow the time
 
-   Name | Age
---------|------
-    Bob | 27
-  Alice | 23
+~~~c++
+void eae6320::cMyGame::UpdateBasedOnInput()
+{
+	// Is the user pressing the ESC key?
+	if ( UserInput::IsKeyPressed( UserInput::KeyCodes::Escape ) )
+	{
+		// Exit the application
+		const auto result = Exit( EXIT_SUCCESS );
+		EAE6320_ASSERT( result );
+	}
 
-#### Inline Markdown within tables
+	// If the user press space, slow the time
+	if (UserInput::IsKeyPressed(UserInput::KeyCodes::Space))
+	{
+		//slow the time
+		SetTimeRate(0.2f);
+	}
 
-| Italics   | Bold     | Code   |
-| --------  | -------- | ------ |
-| *italics* | **bold** | `code` |
+	// If the user release space, restore the time
+	if (!UserInput::IsKeyPressed(UserInput::KeyCodes::Space))
+	{
+		//restore the time
+		SetTimeRate(1.0f);
+	}
+}
+~~~
 
-| A                                                        | B                                                                                                             | C                                                                                                                                    | D                                                 | E                                                          | F                                                                    |
-|----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------------|
-| Lorem ipsum dolor sit amet, consectetur adipiscing elit. | Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex. | Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus | Proin sit amet velit nec enim imperdiet vehicula. | Ut bibendum vestibulum quam, eu egestas turpis gravida nec | Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien |
+Add function to iApplication files to set time rate
 
-## Code Blocks
+~~~c++
+/*
+* iApplication.h
+*/
+public:
+	void SetTimeRate(const float rate);
 
-#### Code block with backticks
+/*
+*iApplication.cpp
+*/
+//Set the time rate
+void eae6320::Application::iApplication::SetTimeRate(const float rate)
+{
+	m_simulationRate = rate;
+}
+~~~
 
-```html
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Example HTML5 Document</title>
-</head>
-<body>
-  <p>Test</p>
-</body>
-</html>
-```
 
-#### Code block indented with four spaces
 
-    <!doctype html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <title>Example HTML5 Document</title>
-    </head>
-    <body>
-      <p>Test</p>
-    </body>
-    </html>
 
-#### Code block with Hugo's internal highlight shortcode
-{{< highlight html >}}
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Example HTML5 Document</title>
-</head>
-<body>
-  <p>Test</p>
-</body>
-</html>
-{{< /highlight >}}
 
-#### Diff code block
+## Thoughts
 
-```diff
-[dependencies.bevy]
-git = "https://github.com/bevyengine/bevy"
-rev = "11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13"
-- features = ["dynamic"]
-+ features = ["jpeg", "dynamic"]
-```
+### organization
 
-## List Types
+The organization of this project is very in line with my previous coding habits, distinguishing different functional modules, which not only makes it easy to find and modify, but also makes the logic clearer.
 
-#### Ordered List
+### code style
 
-1. First item
-2. Second item
-3. Third item
+I think it's a great thing to name every function and variable based on its actual meaning, which not only facilitates future modifications but also makes it easier for readers to understand. Meanwhile, there are numerous detailed comments in the code that make understanding relatively easy.
 
-#### Unordered List
+I have also found that unnamed namespace is also used in the code, and I think this is a very good thing to prevent functions with naming conflicts.
 
-* List item
-* Another item
-* And another item
+### confusion
 
-#### Nested list
+The project configuration has really troubled me for a long time. I haven't had a similar experience before, but fortunately, after communicating with my classmates and step-by-step troubleshooting the configuration, it was resolved. I would like to thank **Lehan Li** for her help, and I am really grateful for taking the time to help me troubleshoot the configuration problem. 
 
-* Fruit
-  * Apple
-  * Orange
-  * Banana
-* Dairy
-  * Milk
-  * Cheese
+My previous operation was to build ExempleGame first and then build BuildExempleGameAssets. This resulted in some lib files used by BuildExempleGameAssets not being generated, as ExempleGame did not reference these libs. Just build the solution directly and there would be no problem. Now it seems a tiny problem, but really stuck me for a long time.
 
-## Other Elements — abbr, sub, sup, kbd, mark
 
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
-H<sub>2</sub>O
+## Expectation
 
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+I am really excited about how to build game engines. When using the UE engine, I often marvel at the powerful features and wonder how they are implemented. However, due to my own ability issues, reading the UE source code has always been a confusing thing for me. I hope to learn a series of graphics knowledge related to game engines, underlying design frameworks, performance optimization algorithms used, and more through this semester's courses
 
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
 
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
 
-## Hyperlinked image
+## Time Cost
 
-[![Google](https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png)](https://google.com)
+This assignment took me over 10 hours, with the majority of time spent on resolving configuration issues
+
+
+
+## Game Sample
+
+Download and have a try: [MyGame](https://drive.google.com/uc?export=download&id=1Jp8nIzYdjSdQOfs63wyZ2yikuC6ybzke)
