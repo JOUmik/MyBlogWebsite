@@ -2,7 +2,7 @@
 author = "Yan Liu"
 title = "Game Engine II Assignment01"
 date = "2024-08-26"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+description = "The details of assignment 01 for eae6320."
 tags = [
     "eae6320"
 ]
