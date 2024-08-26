@@ -25,7 +25,7 @@ image = "engine.jpg"
 
 ## Log of My Game
 
-![log](.\log.png)
+<img src=".\log.png" />
 
 
 
