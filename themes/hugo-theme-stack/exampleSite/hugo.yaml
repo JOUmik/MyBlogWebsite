@@ -1,9 +1,9 @@
-baseurl: https://joumik.github.io/
+baseurl: https://example.com
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 3
-title: Joumik
-copyright: Yan Liu
+title: Example Site
+copyright: Example Person
 
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
@@ -13,21 +13,26 @@ DefaultContentLanguage: en
 # This will make .Summary and .WordCount behave correctly for CJK languages.
 hasCJKLanguage: false
 
-timeout: 5m
-
 languages:
     en:
         languageName: English
-        title: Joumik
+        title: Example Site
         weight: 1
         params:
             description: Example description
     zh-cn:
         languageName: 中文
-        title: 青若曦冰
+        title: 演示站点
         weight: 2
         params:
             description: 演示说明
+    ar:
+        languageName: عربي
+        languagedirection: rtl
+        title: موقع تجريبي
+        weight: 3
+        params:
+            description: وصف تجريبي
 
 services:
     # Change it to your Disqus shortname before using
@@ -46,10 +51,10 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon: /favicon.ico
+    favicon: # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
-        since: 2024
+        since: 2020
         customText:
 
     dateFormat:
@@ -57,12 +62,12 @@ params:
         lastUpdated: Jan 02, 2006 15:04 MST
 
     sidebar:
-        emoji:
-        subtitle: To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel.
+        emoji: 🍥
+        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         avatar:
             enabled: true
             local: true
-            src: img/avatar.jpg
+            src: img/avatar.png
 
     article:
         math: false
@@ -206,9 +211,15 @@ menu:
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/JOUmik
+          url: https://github.com/CaiJimmy/hugo-theme-stack
           params:
               icon: brand-github
+
+        - identifier: twitter
+          name: Twitter
+          url: https://twitter.com
+          params:
+              icon: brand-twitter
 
 related:
     includeNewer: true

@@ -1,0 +1,37 @@
+/* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+.container {
+    margin-left: auto;
+    margin-right: auto;
+
+    &.extended {
+        /* range: 768-1024 */
+        @include respond(md) {
+            max-width: 1024px;
+            --left-sidebar-max-width: 16%;
+            --right-sidebar-max-width: 27%;
+        }
+
+        /* range: 1024-1280 */
+        @include respond(lg) {
+            max-width: 1280px;
+            --left-sidebar-max-width: 16%;
+            --right-sidebar-max-width: 18%;
+        }
+    }
+
+    &.compact {
+        @include respond(md) {
+            --left-sidebar-max-width: 16%;
+            max-width: 768px;
+        }
+
+        @include respond(lg) {
+            max-width: 1024px;
+            --left-sidebar-max-width: 11%;
+        }
+
+        @include respond(xl) {
+            max-width: 1280px;
+        }
+    }
+}

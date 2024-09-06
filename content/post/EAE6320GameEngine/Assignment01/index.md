@@ -31,7 +31,9 @@ image = "engine.jpg"
 
 ## Add Reference
 
-The projects need to add reference to graphics is **Application** and **ShaderBuilder**.
+The project needs to add reference to Graphics is **Application**.
+
+I found **ShaderBuilder** has mentioned graphics namespace but don't need to add reference to Graphics. The reason is that ShaderBuilder only uses Graphics::ShaderType and it is an enum, which means it doesn't require any function from Graphics. 
 
 
 
