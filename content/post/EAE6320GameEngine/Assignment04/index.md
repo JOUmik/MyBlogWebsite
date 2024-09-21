@@ -61,6 +61,12 @@ void eae6320::cMyGame::SubmitDataToBeRendered(const float i_elapsedSecondCount_s
 
 
 
+## Cache
+
+To ensure that the rendered content on each frame is complete, it is necessary to wait for all information about that frame to be ready before rendering. So the content that needs to be rendered in a frame should be saved in the cache first, and the complete data should be obtained from the cache for rendering after all the content in that frame has been loaded to cache. That's also why the sDataRequiredToRenderAFrame structure has two variables, one for the Application thread for caching and one for the render thread for rendering.
+
+
+
 ## Mesh/Effect Pair
 
 Initialize mesh and effect first 
