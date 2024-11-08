@@ -1,7 +1,7 @@
 +++
 author = "Yan Liu"
 title = "Game Engine II Engine System Update 02"
-date = "2024-10-25"
+date = "2024-11-07"
 description = "The details of Engine System Update 02 for eae6320."
 tags = [
     "EAE6320"
