@@ -142,10 +142,10 @@ enum class CollisionComponentType
 };
 ~~~
 
-The function you need to set the component type is **SetCollisionComponentType()**. By default, it would be set to **Static**.
+The function you need to set the component type is **SetCollisionComponentType()**. By default, it would be set to **Dynamic**.
 
 ~~~c++
-inline void SetCollisionComponentType(CollisionComponentType i_collisionComponentType = CollisionComponentType::Static) { collisionComponentType = i_collisionComponentType; }
+inline void SetCollisionComponentType(CollisionComponentType i_collisionComponentType = CollisionComponentType::Dynamic) { collisionComponentType = i_collisionComponentType; }
 ~~~
 
 
