@@ -54,11 +54,13 @@ void Update();
 void Destroy();
 ~~~
 
-- You should call **Begin()** in the beginning of the game, call **Update()** in each update, call **Destroy()** when you finish the game;
-
 - You mush call **AddCollisionComponent()** to add the component to the component set, if it is not set to the collision set, it would not do the collision detection;
 
 - You mush call **RemoveCollisionComponent()** before you destroy the component;
+
+- You should call **Begin()** in the beginning of the game after you add all the components to the component set;
+
+- You should call **Update()** in each update and call **Destroy()** when you finish the game;
 
 
 
@@ -154,7 +156,7 @@ Because the **StaticBVH** would be only built once when **CollisionManager::GetC
 
 
 
-<font color = "Red">"You must set the component type to **Dynamic** if they want the component to move."</font>
+<font color = "Red">"You must set the component type to **Dynamic** if you want the component to move."</font>
 
 
 
@@ -290,4 +292,4 @@ Math::sVector PerformBinarySearch(const Math::sVector& start, const Math::sVecto
 
 ## Collision System Download
 
-Download and have a try: [CollisionSystem](https://drive.google.com/uc?export=download&id=1t2At50qaFP--3QAPWehlOlmciLthd2Yq)
+Download and have a try:  [CollisionSystem](https://drive.google.com/uc?export=download&id=1ZXA0feBHdrtf_iwKjp7puEI2Nxkq9NIz)
