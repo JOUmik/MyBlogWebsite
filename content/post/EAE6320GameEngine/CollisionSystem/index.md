@@ -235,13 +235,17 @@ void eae6320::AOverlapBeginTestActor::OnComponentBeginOverlap(const Collision::B
 
 
 
+## What you need to notice
+
+When doing the final project, I found that deleting the pointer variable of the collision component added to the collision manager in the middle of the game would crash the game (even if you have already called RemoveCollisionComponent() to remove it). So if you want to use this system, <font color = red>**please do not delete the pointer variables of the collision component in the middle of the game**</font>. Instead, delete them at the end of the game, which means you should delete all those variables at your **CleanUp()** function. I may fix this issue if I have enough time but for now, please follow it.
+
+
+
 ## How I used what I have learned this semester
 
 - The way to set up an engine system and make it work with other system;
 - The way to make graphics debugging, thanks for that I did not stuck on any issue for a long time;
 - Taking the advantage of logging system and use it to test whether the demo works as I expected;
-
-
 
 
 
@@ -292,4 +296,4 @@ Math::sVector PerformBinarySearch(const Math::sVector& start, const Math::sVecto
 
 ## Collision System Download
 
-Download and have a try:  [CollisionSystem](https://drive.google.com/uc?export=download&id=1ZXA0feBHdrtf_iwKjp7puEI2Nxkq9NIz)
+Download and have a try:  [CollisionSystem](https://drive.google.com/uc?export=download&id=1lcWHPjaP3dUItATodLzhXCU6NFPBOxFA)
